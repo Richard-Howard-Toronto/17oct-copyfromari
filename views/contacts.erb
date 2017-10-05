@@ -6,6 +6,7 @@
    </head>
    <body>
      <h1>contacts</h1>
+     <p> <a href="/index"> Go to index </a> </p>
      <ul>
        <% @list.each do |contact| %>
          <li><%=contact.full_name%> | <%=contact.email%> | <%=contact.note %></li>

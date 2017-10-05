@@ -14,7 +14,6 @@ require 'sinatra'
  end
 
  get '/contacts' do
-
    @list = Contact.all
    erb :contacts
  end
