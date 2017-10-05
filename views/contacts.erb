@@ -3,21 +3,20 @@
    <head>
 
     <meta charset="utf-8">
-     <title>Contacts</title>
+
+     <title class="contacts">Contacts</title>
 
    </head>
 
    <body>
-
-     <h2>Contacts</h2>
-
-     <p> <a href="/index"> Go to index </a> </p>
 
      <ul>
        <% @list.each do |contact| %>
          <li><%=contact.full_name%> | <%=contact.email%> | <%=contact.note %></li>
        <% end %>
      </ul>
+
+      <p> <a href="/index"> Go to index </a> </p>
 
    </body>
   </html>
