@@ -5,10 +5,6 @@ require 'sinatra'
    redirect to('/index')
  end
 
- get '/index' do
-   erb :index
- end
-
  get '/about' do
      erb :about
  end
@@ -17,6 +13,14 @@ require 'sinatra'
    @list = Contact.all
    erb :contacts
  end
+
+
+
+ get '/index' do
+   erb :index
+ end
+
+
 
 
  after do
