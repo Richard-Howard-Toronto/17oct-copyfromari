@@ -2,9 +2,9 @@
      <h4> <%= "There are #{@list.count} contacts"%> </h4>
        <% @list.each do |contact| %>
           <div>
-             <%=contact.full_name%> | <%=contact.email%>
+             <%=contact.full_name%> | <%=contact.email%> |
+             <%=contact.note%> | <%= contact.id%>
              <br>
-             <a href="#">Edit</a> | <a href="#">Delete</a>
+             <a href="/contacts/<%= contact.id%>"><%=contact.first_name%></a> | <a href="#">Delete</a>
           </div>
        <% end %>
-    
