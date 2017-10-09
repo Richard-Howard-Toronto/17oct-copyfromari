@@ -6,14 +6,14 @@
           <div>
              <%=  contact.full_name %>
              <ul>
-               <li><%=  contact.email %></li>
-               <li><%=  contact.note  %></li>
-               <li><%=  contact.id    %></li>
+               <li>email: <%=  contact.email %></li>
+               <li>note: <%=  contact.note  %></li>
+               <li>id: <%=  contact.id    %></li>
             </ul>
           </div>
             <div>
                <a href="/contacts/<%= contact.id%>"><%=contact.first_name%></a> | <a href="#">Delete</a>
-            </div>    
+            </div>
         </section>
 
        <% end %>

@@ -30,6 +30,7 @@ section {
 ul {
   background-color: grey;
   font-size: 25px;
+  list-style-type: none;
 }
 
 title {
