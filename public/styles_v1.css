@@ -16,6 +16,17 @@ h2 a {
   padding: 30px;
 }
 
+h5 {
+  font-size: 25px;
+  font-family: cursive;
+}
+
+section {
+  background: lightgreen;
+  border: solid 2px;
+  margin: 2px;
+}
+
 ul {
   background-color: grey;
   font-size: 25px;
@@ -38,7 +49,15 @@ title {
 }
 
 div {
-  background-color: green;
+  background-color: whitesmoke;
   margin: 30px;
+  padding: 20px;
   text-decoration: none;
+}
+
+footer {
+  background-color: lightgrey;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
 }

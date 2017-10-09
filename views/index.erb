@@ -1,10 +1,18 @@
 
      <h4> <%= "There are #{@list.count} contacts"%> </h4>
        <% @list.each do |contact| %>
+       <section>
           <div>
-             <%=contact.full_name%> | <%=contact.email%> |
-             <%=contact.note%> | <%= contact.id%>
-             <br>
+             <%=contact.full_name%>
+             <ul>
+               <li><%=contact.email%></li>
+               <li><%=contact.note%></li>
+               <li><%= contact.id%></li>
+            </ul>
+          </div>
+          <div>
              <a href="/contacts/<%= contact.id%>"><%=contact.first_name%></a> | <a href="#">Delete</a>
           </div>
+        </section>
+
        <% end %>
