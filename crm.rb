@@ -18,12 +18,20 @@ require_relative 'contact'
    erb :photos   # you could call this anything
  end
 
+ get '/contacts/:id/edit' do
+   @contact = Contact.find_by(id: params[:id].to_i)
+    if @contact
+        erb :edit_contact
+    else
+        raise Sinatra::NotFound
+    end
+  end
+
   get '/add_contact' do
     erb :add_contact
   end
 
-  get '/contacts/:id' do  #if we had kittens, params i.d.  would be kittens
-    # params[:id] contains the id from the URL
+  get '/contacts/:id' do
     @contact = Contact.find_by({id: params[:id].to_i})
     if @contact
       erb :show_contact
@@ -43,6 +51,28 @@ require_relative 'contact'
     )
     redirect to('/index')
   end
+
+
+  put '/contacts/:id' do
+  @contact = Contact.find_by(id: params[:id].to_i)
+  if @contact
+    @contact.update(
+      first_name: params[:first_name],   #like "JANE" hash of info
+      last_name: params[:last_name],   #their names become the keys and what you type is becomes the value (of the has)
+      email: params[:your_email],
+      note: params[:stuff_about_us],
+      age: params[:ages]
+    )
+    redirect to('/contacts')
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+
+
+
+
 
  after do
    ActiveRecord::Base.connection.close
