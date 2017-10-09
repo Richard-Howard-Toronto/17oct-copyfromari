@@ -15,8 +15,26 @@ require_relative 'contact'
  end
 
  get '/photos' do  #ROUTES, the url
-   erb :photos   # you could call this anything
+   erb :photos
  end
+
+
+ get '/delete_contact' do
+   erb :delete_contact
+ end
+
+ delete '/contacts/:id' do
+   @contact = Contact.find(params[:id].to_i)
+   if @contact
+     @contact.delete
+     redirect to('/contacts')
+   else
+     raise Sinatra::NotFound
+   end
+ end
+
+
+
 
  get '/contacts/:id/edit' do
    @contact = Contact.find_by(id: params[:id].to_i)
@@ -27,18 +45,11 @@ require_relative 'contact'
     end
   end
 
+
+
+
   get '/add_contact' do
     erb :add_contact
-  end
-
-  get '/contacts/:id' do
-    @contact = Contact.find_by({id: params[:id].to_i})
-    if @contact
-      erb :show_contact
-    else
-      raise Sinatra::NotFound
-    end
-
   end
 
   post '/add_contact' do
@@ -52,6 +63,16 @@ require_relative 'contact'
     redirect to('/index')
   end
 
+
+  get '/contacts/:id' do
+    @contact = Contact.find_by({id: params[:id].to_i})
+    if @contact
+      erb :show_contact
+    else
+      raise Sinatra::NotFound
+    end
+
+  end
 
   put '/contacts/:id' do
   @contact = Contact.find_by(id: params[:id].to_i)
@@ -68,9 +89,6 @@ require_relative 'contact'
     raise Sinatra::NotFound
   end
 end
-
-
-
 
 
 
