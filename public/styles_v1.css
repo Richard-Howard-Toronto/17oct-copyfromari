@@ -42,6 +42,11 @@ title {
   border: 30px;
 }
 
+form {
+  border: solid green 4px;
+}
+
+
 .contacts {
   display: block;
   background-color: pink;

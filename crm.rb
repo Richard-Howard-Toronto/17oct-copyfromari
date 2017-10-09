@@ -11,7 +11,7 @@ require_relative 'contact'
  end
 
  get '/about' do
-     erb :about
+   erb :about
  end
 
  get '/photos' do  #ROUTES, the url
@@ -37,14 +37,12 @@ require_relative 'contact'
     Contact.create(
       first_name: params[:first_name],   #like "JANE" hash of info
       last_name: params[:last_name],   #their names become the keys and what you type is becomes the value (of the has)
-      email: params[:email],
-      note: params[:stuff_about_us]
+      email: params[:your_email],
+      note: params[:stuff_about_us],
+      age: params[:ages]
     )
-
     redirect to('/index')
-
   end
-
 
  after do
    ActiveRecord::Base.connection.close

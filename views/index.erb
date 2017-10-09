@@ -1,5 +1,6 @@
 
      <h4> <%= "There are #{@list.count} contacts"%> </h4>
+
        <% @list.each do |contact| %>
 
        <section>
@@ -7,13 +8,17 @@
              <%=  contact.full_name %>
              <ul>
                <li>email: <%=  contact.email %></li>
-               <li>note: <%=  contact.note  %></li>
-               <li>id: <%=  contact.id    %></li>
+               <li>note:  <%=  contact.note  %></li>
+               <li>id:    <%=  contact.id    %></li>
+               <li>age:   <%=  contact.age   %></li>
             </ul>
           </div>
-            <div>
-               <a href="/contacts/<%= contact.id%>"><%=contact.first_name%></a> | <a href="#">Delete</a>
-            </div>
+
+          <div>
+            <a href="/contacts/<%= contact.id%>"><%=contact.first_name%></a>
+            | <a href="#">Delete</a>
+          </div>
+
         </section>
 
        <% end %>

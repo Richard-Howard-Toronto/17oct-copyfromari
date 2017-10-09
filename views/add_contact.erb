@@ -2,19 +2,31 @@
 
 <!-- #categorizes the information that is being sent to the server
 # the inputs... the fields where we enter the data. -->
+<!-- note we are using method='post' to submit data to the server -->
 
 <form action='/add_contact' method='post'>
-  <label for="first_name">First Name:</label>
-  <input type='text' name='first_name'>
+
+  <label for="first_name">  First Name: </label>
+  <input type='string' name='first_name'>
   <br>
-  <label for="first_name">Last Name:</label>
-  <input type='text' name='last_name'>
+
+  <label for="last_name"> Last Name:  </label>
+  <input type='string' name='last_name'>
   <br>
-  <label for="first_name">Email:</label>
-  <input type='text' name='email'>
+
+  <label for="email_name">  Email:  </label>
+  <input type='string' name='your_email'>
   <br>
-  <label for="first_name">Note:</label>
+
+  <label for="Note">  Note: </label>
   <input type='text' name='stuff_about_us'>
   <br>
-  <input type='submit' value='New Contact'>
+
+  <label for="Age"> Age:</label>
+  <input type='string' name='ages'>
+  <br>
+
+
+  <input type='submit' value='Submit New Contact'>
+
 </form>
